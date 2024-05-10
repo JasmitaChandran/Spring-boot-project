@@ -76,17 +76,38 @@ import org.springframework.stereotype.Component;
 //    }
 //}
 
-@Component
+//@Component
+//public class PizzaController{
+//    Pizza pizza ;
+//
+//    @Autowired
+//    public PizzaController(Pizza pizza) {
+//        this.pizza = pizza;
+//    }
+//
+//    public String getPizza(){
+//
+//        return pizza.getPizza();
+//    }
+//}
+
+//Java based Configuration - @Bean and @Configuration
 public class PizzaController{
     Pizza pizza ;
 
-    @Autowired
     public PizzaController(Pizza pizza) {
         this.pizza = pizza;
     }
 
     public String getPizza(){
-
         return pizza.getPizza();
+    }
+    //init and destroy in @Bean
+    public void init(){
+        System.out.println("Initialization Logic.......");
+    }
+
+    public void destroy(){
+        System.out.println("Destruction Logic ...........");
     }
 }
