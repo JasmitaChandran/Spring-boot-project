@@ -60,13 +60,28 @@ import org.springframework.stereotype.Component;
 //    }
 //}
 
-//@Qualifier -->is used in conjunction with @Autowired to avoid confusion when we have 2 or more beans configured for same type.
+////@Qualifier -->is used in conjunction with @Autowired to avoid confusion when we have 2 or more beans configured for same type.
+//@Component
+//public class PizzaController{
+//    Pizza pizza ;
+//
+//    @Autowired
+//    public PizzaController(@Qualifier("vegPizza")Pizza pizza) {
+//        this.pizza = pizza;
+//    }
+//
+//    public String getPizza(){
+//
+//        return pizza.getPizza();
+//    }
+//}
+
 @Component
 public class PizzaController{
     Pizza pizza ;
 
     @Autowired
-    public PizzaController(@Qualifier("vegPizza")Pizza pizza) {
+    public PizzaController(Pizza pizza) {
         this.pizza = pizza;
     }
 
@@ -74,9 +89,4 @@ public class PizzaController{
 
         return pizza.getPizza();
     }
-
-
-
-
-
 }
