@@ -1,5 +1,6 @@
 package com.example.helloworld;
 
+import com.example.helloworld.LazyLoader.LazyLoader;
 import com.example.helloworld.Repository.MyRepository;
 import com.example.helloworld.controller.MyController;
 import com.example.helloworld.controller.PizzaController;
@@ -30,6 +31,13 @@ public class SpringAnnotationApplication {
 
         MyService service = context.getBean(MyService.class);
         System.out.println(service.hello());
+
+        //   Lazy loader
+        //   On startup, Spring creates beans of the application context.
+       //    But if we don’t want to create beans at start, and wants to create bean lazily on demand in between, then @Lazy is used.
+
+             LazyLoader lazy = context.getBean(LazyLoader.class);
+
     }
 
 }
