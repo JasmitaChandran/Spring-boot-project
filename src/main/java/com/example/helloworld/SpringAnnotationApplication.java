@@ -2,6 +2,7 @@ package com.example.helloworld;
 
 import com.example.helloworld.LazyLoader.LazyLoader;
 import com.example.helloworld.Repository.MyRepository;
+import com.example.helloworld.ValueAnnotation.ValueAnnotationDemo;
 import com.example.helloworld.controller.MyController;
 import com.example.helloworld.controller.PizzaController;
 import com.example.helloworld.scope.PrototypeBean;
@@ -45,28 +46,34 @@ public class SpringAnnotationApplication {
         //Singleton - only one instance is created and shared across the application
         //Prototype - a new instance of bean is created every time, it is requested.
 
+//        var context =  SpringApplication.run(SpringAnnotationApplication.class, args);
+//
+//        SingletonBean sb1 = context.getBean(SingletonBean.class);
+//        System.out.println(sb1.hashCode());
+//
+//        SingletonBean sb2 = context.getBean(SingletonBean.class);
+//        System.out.println(sb2.hashCode());
+//
+//        SingletonBean sb3 = context.getBean(SingletonBean.class);
+//        System.out.println(sb3.hashCode());
+//
+//        PrototypeBean pb1 = context.getBean(PrototypeBean.class);
+//        System.out.println(pb1.hashCode());
+//
+//        PrototypeBean pb2 = context.getBean(PrototypeBean.class);
+//        System.out.println(pb2.hashCode());
+//
+//        PrototypeBean pb3 = context.getBean(PrototypeBean.class);
+//        System.out.println(pb3.hashCode());
+
         var context =  SpringApplication.run(SpringAnnotationApplication.class, args);
-
-        SingletonBean sb1 = context.getBean(SingletonBean.class);
-        System.out.println(sb1.hashCode());
-
-        SingletonBean sb2 = context.getBean(SingletonBean.class);
-        System.out.println(sb2.hashCode());
-
-        SingletonBean sb3 = context.getBean(SingletonBean.class);
-        System.out.println(sb3.hashCode());
-
-        PrototypeBean pb1 = context.getBean(PrototypeBean.class);
-        System.out.println(pb1.hashCode());
-
-        PrototypeBean pb2 = context.getBean(PrototypeBean.class);
-        System.out.println(pb2.hashCode());
-
-        PrototypeBean pb3 = context.getBean(PrototypeBean.class);
-        System.out.println(pb3.hashCode());
-
-
-
+        ValueAnnotationDemo vad = context.getBean(ValueAnnotationDemo.class);
+        System.out.println(vad.getDefaultName());
+//        System.out.println(vad.getHost());
+//        System.out.println(vad.getEmail());
+//        System.out.println(vad.getPassword());
+        System.out.println(vad.getJavaHome());
+        System.out.println(vad.getHomeDir());
 
 
 
