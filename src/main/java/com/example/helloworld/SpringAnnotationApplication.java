@@ -13,7 +13,7 @@ public class SpringAnnotationApplication {
         //Application context acts as a spring IOC container
       var context =  SpringApplication.run(SpringAnnotationApplication.class, args);
       PizzaController hwc = context.getBean(PizzaController.class);
-        System.out.println(hwc.getPizaa());
+        System.out.println(hwc.getPizza());
     }
 
 }
