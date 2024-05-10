@@ -1,14 +1,25 @@
 package com.example.helloworld.service;
 
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 
-@Component
+////@Primary annotation --> Used to give higher preference to the bean, when multiple beans are there
+//@Component
+//@Primary
+//public class VegPizza implements Pizza {
+//
+//    @Override
+//    public String getPizza(){
+//
+//        return "Veg Pizza";
+//    }
+//
+//}
+
+//Java based Configuration - @Bean and @Configuration
 public class VegPizza implements Pizza {
-
     @Override
-    public String getPizza(){
-
+    public String getPizza() {
         return "Veg Pizza";
     }
-
 }
