@@ -118,6 +118,31 @@ public class BookController{
         book.setTitle(title);
         return ResponseEntity.ok(book);
     }
+//@RequestParam --> to extract the query parameters from the url and bind the corresponding query parameter to the value to the method arguments.
+//http://localhost:8080/book/query?id=1&title=Core Java
+    @GetMapping("/book/query")
+   public ResponseEntity<Book> requestParamDemo(@RequestParam(name ="id") int id, @RequestParam(name ="title")String title){
+
+       System.out.println(id);
+       System.out.println(title);
+
+       Book book = new Book();
+       book.setId(id);
+       book.setTitle(title);
+
+       return ResponseEntity.ok(book);
+   }
+
+
+
+
+
+
+
+
+
+
+
 }
 
 
