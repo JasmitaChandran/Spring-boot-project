@@ -68,6 +68,27 @@ public class BookController{
         return book;
     }
 
+    //Post Mapping (using @ResponseStatus)
+//    @PostMapping(value="/book/create",
+//                 consumes = MediaType.APPLICATION_JSON_VALUE)
+//    @ResponseStatus(value= HttpStatus.CREATED)
+//    public Book createBook(@RequestBody Book book){
+//        System.out.println(book.getId());
+//        System.out.println(book.getTitle());
+//        System.out.println(book.getDescription());
+//        return book;
+//    }
+
+    //Post Mapping (using ResponseEntity)
+    @PostMapping(value="/book/create",
+            consumes = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<Book> createBook(@RequestBody Book book){
+        System.out.println(book.getId());
+        System.out.println(book.getTitle());
+        System.out.println(book.getDescription());
+        return new ResponseEntity<>(book, HttpStatus.CREATED);
+    }
+
 }
 
 
