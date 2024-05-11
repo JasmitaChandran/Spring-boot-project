@@ -12,6 +12,10 @@ public class Book {
         this.description = description;
     }
 
+    public Book() {
+
+    }
+
     public int getId() {
         return id;
     }
