@@ -89,6 +89,17 @@ public class BookController{
         return new ResponseEntity<>(book, HttpStatus.CREATED);
     }
 
+    //@PutMapping Annotation
+    //@Path variable—> used to bind the value of URI template variable ({id}) to the method argument.
+    //@ResponseBody —> It is responsible to retrieve the JSON data from the request body, and it would convert this JSON to java object.
+@PutMapping(value ="/book/update/{id}")
+    public ResponseEntity<Book> updateBook(@PathVariable int id, @RequestBody Book updatedbook){
+        System.out.println(id);
+        System.out.println(updatedbook.getTitle());
+        System.out.println(updatedbook.getDescription());
+        updatedbook.setId(id);
+        return ResponseEntity.ok(updatedbook);
+    }
 }
 
 
